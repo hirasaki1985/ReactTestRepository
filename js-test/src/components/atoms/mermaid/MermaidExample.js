@@ -1,54 +1,25 @@
 export default `
-classDiagram
-class GeoPointType {
- <<enumeration>>
-  BROWNFIELD
-  OGWELL
-  CELL_TOWER
-  NUCLEAR_REACTOR
-  SUPERFUND
-}
-class GeoPoint {
-  -UUID id
-  +GeoPointType type
-  +GeographyPoint location
-  -UUID metadata references metadata(id)
-  +Datetime createdAt
-}
-class GeographyPoint {
-  <<interface>>
-  +GeoJSON geojson
-  +Int srid
-  +Float longitude
-  +Float latitude
-}
-class NearbyPoint {
- <<Interface>>
-  -UUID id references GeoPoint(id)
-  +GeoPointType GeoPoint::type
-  +GeographyPoint GeoPoint::location
-  +UUID GeoPoint::metadata
-  +Float distance
-}
-class NearbyPoints {
-<<Service>>
-  +GeoJSON origin
-  +Float radiusMi
-  +Int first
-  +Int last
-  +Int offset
-  +Cursor before
-  +Cursor after
-}
-class Hotel {
- -UUID id
-+String name
--Int objectid 
-}
-GeoPoint *-- GeoPointType: Composition
-GeoPoint *-- GeographyPoint: Composition
-GeoPoint "1" <|-- "1" NearbyPoint: Implements
-NearbyPoints "1" -- "0..n"NearbyPoint: Contains
-Hotel "1" -- "1" GeoPoint: May Contain
-    
+flowchart LR
+  トップメニュー -- 15 --> お得なフェアセール
+    お得なフェアセール -- 8 --> 懐かしの看板商品復活祭
+    お得なフェアセール -- 5 --> 対象商品を買うと無料引換券_対象の伊藤園カテキン緑茶500ml__がもらえる!
+    お得なフェアセール -- 2 --> JCBプレモカードが最大400円おトク!
+  トップメニュー -- 12 --> ランキング
+    ランキング -- 5 --> ファミマスイーツ売上ランキング
+    ランキング -- 3 --> ファミマの冷やし麺売上ランキング
+    ランキング -- 2 --> 実は3人以上出産したと聞いて驚く有名人ランキング
+    ランキング -- 2 --> 実は高学歴と知って驚いた芸人ランキング
+  トップメニュー -- 10 --> 新商品
+    新商品 -- 3 --> 赤飯おむすび
+    新商品 -- 2 --> タルタル鶏天丼
+    新商品 -- 1 --> 醤が決め手!四川風麻婆豆腐丼
+    新商品 -- 1 --> 特製中華丼
+    新商品 -- 1 --> 豚キムチうどんマヨネーズ付
+    新商品 -- 1 --> グリルベーコンのカルボナーラ
+    新商品 -- 1 --> 1/3日分の野菜が摂れる五目あんかけ焼そば
+  トップメニュー -- 5 --> 人気店監修商品 -- 2 --> マシマシにんにく冷し中華
+    人気店監修商品 -- 2 --> ピザサンドCoCo壱番屋監修Wウインナー&ポークカレー味
+    人気店監修商品 -- 1 --> スモークチキンのサラダ
+  トップメニュー -- 3 --> なんでもランキング
+  トップメニュー -- 2 --> 天気予報    
     `;

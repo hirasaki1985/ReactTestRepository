@@ -6,50 +6,26 @@ mermaid.initialize({
   theme: "default",
   securityLevel: "loose",
   themeCSS: `
-    g.classGroup rect {
-      fill: #282a36;
-      stroke: #6272a4;
-    } 
-    g.classGroup text {
-      fill: #f8f8f2;
+    g.node > rect.label-container {
+      stroke: #15b72f;
+      fill: #e0ffea;
     }
-    g.classGroup line {
-      stroke: #f8f8f2;
-      stroke-width: 0.5;
+    g.node > .nodeLabel {
+      color: white;
+      fill: white;
     }
-    .classLabel .box {
-      stroke: #21222c;
-      stroke-width: 3;
-      fill: #21222c;
-      opacity: 1;
+    .edgeLabel {
+      display: inline-block;
+      background-color: #e9edff;
+      border: 1px solid #4b31d8;
+      border-radius: 50%;
+      padding: 5px;
+      text-align:center;
+      width: 15px;
+      height :15px;
+      line-height: 15px;
     }
-    .classLabel .label {
-      fill: #f1fa8c;
-    }
-    .relation {
-      stroke: #ff79c6;
-      stroke-width: 1;
-    }
-    #compositionStart, #compositionEnd {
-      fill: #bd93f9;
-      stroke: #bd93f9;
-      stroke-width: 1;
-    }
-    #aggregationEnd, #aggregationStart {
-      fill: #21222c;
-      stroke: #50fa7b;
-      stroke-width: 1;
-    }
-    #dependencyStart, #dependencyEnd {
-      fill: #00bcd4;
-      stroke: #00bcd4;
-      stroke-width: 1;
-    } 
-    #extensionStart, #extensionEnd {
-      fill: #f8f8f2;
-      stroke: #f8f8f2;
-      stroke-width: 1;
-    }`,
+  `,
   fontFamily: "Fira Code",
 });
 
