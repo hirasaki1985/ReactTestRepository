@@ -5,6 +5,7 @@ mermaid.initialize({
   startOnLoad: true,
   theme: "default",
   securityLevel: "loose",
+  curve: "basis",
   themeCSS: `
     g.node > rect.label-container {
       stroke: #15b72f;
